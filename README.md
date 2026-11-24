@@ -1,8 +1,10 @@
 # Celery starter
 
+[![Deploy on Containify](https://containify.cloud/deploy-button.svg)](https://containify.cloud/templates/celery-worker)
+
 A [Flask](https://flask.palletsprojects.com/) web app and a [Celery](https://docs.celeryq.dev/)
 worker that share a Valkey (Redis-compatible) broker, ready to deploy on
-[Containify](https://containify.net). Both run from the same image with different commands.
+[Containify](https://containify.cloud). Both run from the same image with different commands.
 
 - `GET /`: a hello message
 - `POST /tasks/add` (`{"x": 2, "y": 3}`): queues a task and returns its id and status URL
@@ -29,6 +31,10 @@ curl -X POST localhost:5000/tasks/add -H 'content-type: application/json' -d '{"
 
 ## Deploy on Containify
 
+[![Deploy on Containify](https://containify.cloud/deploy-button.svg)](https://containify.cloud/templates/celery-worker)
+
+One click deploys it on [Containify](https://containify.cloud). The [template page](https://containify.cloud/templates/celery-worker) shows what it creates, and passwords, connection strings and the HTTPS address are filled in for you.
+
 Deploy the **Celery starter** template from the Containify catalogue. It adds the web app, the
 worker and a private Valkey, and gives both apps `REDIS_URL`. Only the web app is public.
 Add tasks in `app/tasks.py`; to run more of them at once, raise the worker's replicas or its
@@ -37,3 +43,7 @@ Add tasks in `app/tasks.py`; to run more of them at once, raise the worker's rep
 ## License
 
 MIT
+
+---
+
+Made by [Containify](https://containify.cloud): deploy apps, databases and workers from a Git repo or an image, with per-second billing. [Docs](https://containify.cloud/docs) · [Templates](https://containify.cloud/templates)
