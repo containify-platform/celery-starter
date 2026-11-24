@@ -1,0 +1,10 @@
+[project]
+name = "celery-starter"
+version = "0.1.0"
+description = "A Flask web app and a Celery worker sharing a Valkey broker, ready to deploy on Containify"
+requires-python = ">=3.14"
+dependencies = [
+    "flask",
+    "gunicorn",
+    "celery[redis]",
+]
